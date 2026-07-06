@@ -1,3 +1,23 @@
+## Resumen de Resultados
+
+| ID | Request | Método | Resultado Esperado | Resultado Obtenido | Estado |
+|----|---------|--------|--------------------|--------------------|--------|
+| API-01 | Pokémon existente | GET | 200 | 200 | ✅ Pass |
+| API-02 | Pokémon por ID | GET | 200 | 200 | ✅ Pass |
+| API-03 | Listado paginado | GET | 200 | 200 | ✅ Pass |
+| API-04 | Tipo de Pokémon | GET | 200 | 200 | ✅ Pass |
+| API-05 | Tiempo de respuesta | GET | <1000ms | 124ms | ✅ Pass |
+| API-06 | ID fuera de rango | GET | 404 | 404 | ✅ Pass |
+| API-07 | Nombre mal escrito | GET | 404 | 400 | ⚠️ Fail (hallazgo) |
+| API-08 | Endpoint inexistente | GET | 404 | 400 | ⚠️ Fail (hallazgo) |
+| API-09 | Método no soportado | POST | 405 | 404 | ⚠️ Fail (hallazgo) |
+| API-10 | Paginación inválida | GET | No 500 | 200 | ✅ Pass |
+
+**7 de 10 tests pasaron según lo esperado.** Los 3 que "fallaron" (API-07, 08, 09) no son errores de configuración de la prueba, sino **hallazgos reales** sobre cómo PokeAPI maneja casos límite — y son, de hecho, los resultados más interesantes de todo el ejercicio.
+
+---
+
+
 ## Analisis Detallado de Ejecucion
 
 ### Escenarios Positivos
