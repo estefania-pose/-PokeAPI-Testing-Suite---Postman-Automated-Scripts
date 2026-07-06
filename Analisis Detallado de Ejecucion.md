@@ -2,7 +2,8 @@
 
 ### Escenarios Positivos
 
-<!-- API-01 -->![Uploading poke1.png…]()
+<!-- API-01 -->
+
 
 <details>
 <summary><b>API-01 - Obtener un Pokemon existente por Nombre</b></summary>
@@ -16,6 +17,7 @@
 **Evidencia en Postman:**
 
 ![API-01 evidencia](./evidencia/API-01.png)
+<img width="1030" height="692" alt="image" src="https://github.com/user-attachments/assets/1e87cb41-e223-4a2a-b89e-6f4dd56e0c58" />
 
 </details>
 <br>
