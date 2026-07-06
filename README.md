@@ -24,6 +24,9 @@ Aplicar pruebas automatizadas y manuales sobre servicios REST públicos para con
 | `PokeAPI.postman_collection.json` | Colección de Postman (formato v2.1) lista para importar, con todos los requests, tests y la variable `base_url`. |
 | `Analisi Detallado de Ejecucion.md` | Documentación legible de cada endpoint probado: método, URL, resultado esperado vs. obtenido, análisis y evidencias en Postman. |
 
+---
+
+
 ## 🔵 Endpoints cubiertos
 
 | Método | Endpoint | Descripción |
