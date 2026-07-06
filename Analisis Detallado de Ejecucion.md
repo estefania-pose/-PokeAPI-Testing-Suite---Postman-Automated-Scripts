@@ -16,8 +16,8 @@
 
 **Evidencia en Postman:**
 
-![API-01 evidencia](./evidencia/API-01.png)
-<img width="1030" height="692" alt="image" src="https://github.com/user-attachments/assets/1e87cb41-e223-4a2a-b89e-6f4dd56e0c58" />
+<img width="709" height="422" alt="poke1" src="https://github.com/user-attachments/assets/af52bba6-6e39-44c0-afad-d969f283a9cc" />
+
 
 </details>
 <br>
@@ -34,7 +34,8 @@
 
 **Evidencia en Postman:**
 
-![API-02 evidencia](./evidencia/API-02.png)
+<img width="709" height="400" alt="poke2" src="https://github.com/user-attachments/assets/ca3b1a19-4a4b-4752-a93d-c7bce55dca47" />
+
 
 </details>
 <br>
@@ -51,7 +52,8 @@
 
 **Evidencia en Postman:**
 
-![API-03 evidencia](./evidencia/API-03.png)
+<img width="709" height="435" alt="poke3" src="https://github.com/user-attachments/assets/8015a349-b78a-4742-b8d2-e556341889cf" />
+
 
 </details>
 <br>
@@ -68,7 +70,8 @@
 
 **Evidencia en Postman:**
 
-![API-04 evidencia](./evidencia/API-04.png)
+<img width="709" height="355" alt="poke4" src="https://github.com/user-attachments/assets/043738b4-99c5-48fb-a874-21b62020c746" />
+
 
 </details>
 <br>
@@ -85,7 +88,8 @@
 
 **Evidencia en Postman:**
 
-![API-05 evidencia](./evidencia/API-05.png)
+<img width="709" height="398" alt="poke5" src="https://github.com/user-attachments/assets/6b1e006f-dc22-499e-a7d7-b9a26b5c0a42" />
+
 
 </details>
 
@@ -106,7 +110,8 @@
 
 **Evidencia en Postman:**
 
-![API-06 evidencia](./evidencia/API-06.png)
+<img width="662" height="319" alt="poke6" src="https://github.com/user-attachments/assets/62edd539-3554-407b-af4e-784ecb84f7cf" />
+
 
 </details>
 <br>
@@ -123,7 +128,8 @@
 
 **Evidencia en Postman:**
 
-![API-07 evidencia](./evidencia/API-07.png)
+<img width="709" height="364" alt="poke7" src="https://github.com/user-attachments/assets/530b87bc-0bbf-4608-88f6-f415b2843085" />
+
 
 </details>
 <br>
@@ -140,7 +146,8 @@
 
 **Evidencia en Postman:**
 
-![API-08 evidencia](./evidencia/API-08.png)
+<img width="709" height="384" alt="poke8" src="https://github.com/user-attachments/assets/f1c3a255-2e5c-45dd-9f3f-f646d770f2c0" />
+
 
 </details>
 <br>
@@ -157,7 +164,8 @@
 
 **Evidencia en Postman:**
 
-![API-09 evidencia](./evidencia/API-09.png)
+<img width="709" height="336" alt="poke9" src="https://github.com/user-attachments/assets/01131ec8-20d9-48c4-b0a8-8f9254912714" />
+
 
 </details>
 <br>
@@ -174,6 +182,7 @@
 
 **Evidencia en Postman:**
 
-![API-10 evidencia](./evidencia/API-10.png)
+<img width="709" height="344" alt="poke10" src="https://github.com/user-attachments/assets/d3729a50-f2ec-46db-8397-37c1bad61a56" />
+
 
 </details>
