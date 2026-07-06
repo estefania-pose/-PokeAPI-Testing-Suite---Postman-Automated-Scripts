@@ -1,3 +1,11 @@
+## 🧪 Pruebas de API con Postman — PokeAPI
+
+En esta sección se documentan las pruebas de integración realizadas sobre la API pública **PokeAPI**. El archivo de la colección en formato JSON está disponible en este repositorio para ser descargado e importado directamente en Postman.
+
+A continuación, podrás desplegar cada endpoint para revisar la configuración de la solicitud, los datos enviados y las evidencias de ejecución con sus respectivos códigos de estado HTTP.
+
+---
+
 ## Resumen de Resultados
 
 | ID | Request | Método | Resultado Esperado | Resultado Obtenido | Estado |
