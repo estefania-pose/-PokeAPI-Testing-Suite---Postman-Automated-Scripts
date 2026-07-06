@@ -1,0 +1,293 @@
+PokemonAPI_coleccion 10 request
+{
+  "info": {
+    "name": "PokemonAPI",
+    "_postman_id": "b3f1a2c4-5d6e-4f7a-8b9c-1d2e3f4a5b6c",
+    "description": "Colección de pruebas de API sobre PokeAPI (https://pokeapi.co/api/v2/) - 10 pruebas (5 positivas / 5 negativas) para afianzar conocimientos de testing de backend y frontend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://pokeapi.co/api/v2/",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Obtener un Pokémon existente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}pokemon/pikachu",
+          "host": ["{{base_url}}pokemon"],
+          "path": ["pikachu"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"El nombre es pikachu\", () => {",
+              "    pm.expect(pm.response.json().name).to.eql(\"pikachu\");",
+              "});",
+              "pm.test(\"Tiene el campo 'abilities'\", () => {",
+              "    pm.expect(pm.response.json()).to.have.property(\"abilities\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Obtener un Pokémon por ID numérico",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}pokemon/6",
+          "host": ["{{base_url}}pokemon"],
+          "path": ["6"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"El id coincide\", () => {",
+              "    pm.expect(pm.response.json().id).to.eql(6);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Listado paginado de Pokémon",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}pokemon?limit=20&offset=0",
+          "host": ["{{base_url}}pokemon"],
+          "query": [
+            { "key": "limit", "value": "20" },
+            { "key": "offset", "value": "0" }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Devuelve exactamente 20 resultados\", () => {",
+              "    pm.expect(pm.response.json().results.length).to.eql(20);",
+              "});",
+              "pm.test(\"Tiene campo 'next' para paginar\", () => {",
+              "    pm.expect(pm.response.json()).to.have.property(\"next\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Consultar un tipo de Pokémon",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}type/electric",
+          "host": ["{{base_url}}type"],
+          "path": ["electric"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Tiene pokémon asociados\", () => {",
+              "    pm.expect(pm.response.json().pokemon.length).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Tiempo de respuesta aceptable",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}ability/overgrow",
+          "host": ["{{base_url}}ability"],
+          "path": ["overgrow"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Responde en menos de 1000ms\", () => {",
+              "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+              "});",
+              "pm.test(\"Content-Type es JSON\", () => {",
+              "    pm.response.to.have.header(\"Content-Type\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Pokémon inexistente (ID fuera de rango)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}pokemon/999999",
+          "host": ["{{base_url}}pokemon"],
+          "path": ["999999"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 404\", () => pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Nombre de Pokémon mal escrito",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}pikachuu",
+          "host": ["{{base_url}}pikachuu"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 404\", () => pm.response.to.have.status(404));",
+              "pm.test(\"El cuerpo no contiene datos de pokémon\", () => {",
+              "    pm.expect(pm.response.text()).to.not.include(\"abilities\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Endpoint inexistente",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}pokemonn/1",
+          "host": ["{{base_url}}pokemonn"],
+          "path": ["1"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 404\", () => pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Método HTTP no soportado",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}pokemon/pikachu",
+          "host": ["{{base_url}}pokemon"],
+          "path": ["pikachu"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 405 (Method Not Allowed)\", () => {",
+              "    pm.response.to.have.status(405);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Parámetro de paginación inválido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}pokemon?limit=-5",
+          "host": ["{{base_url}}pokemon"],
+          "query": [
+            { "key": "limit", "value": "-5" }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"La API no rompe (no da 500)\", () => {",
+              "    pm.expect(pm.response.code).to.not.eql(500);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "response": []
+    }
+  ]
+}
+
